@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0  maximum-scale=1.0, user-scalable=yes"
+    />
+    <title>Location</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="design.css" />
+    <link rel="font" href="styles.css" />
+    <style>
+      /* Style the table container */
+      #table {
+        width: 50%;
+        margin: 0 auto;
+        clear: both;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 2px solid #57534c;
+        text-align: center;
+        padding: 8px;
+      }
+      th {
+        background-color: #dcd3cb;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="Location.html">Location</a></li>
+          <li><a href="about.html">About Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1>Where We Are Located</h1>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+
+    <!-- Map container -->
+    <div id="map"></div>
+
+    <!-- Table container -->
+    <div id="table">
+      <h2>Location</h2>
+
+      <table>
+        <tr>
+          <th>Location</th>
+          <td>Restorative Wellness & Aesthetics</td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td>309 E Race Ave, Searcy, AR 72143</td>
+        </tr>
+        <tr>
+          <th>Latitude</th>
+          <td>35.25048611116927</td>
+        </tr>
+        <tr>
+          <th>Longitude</th>
+          <td>-91.73463618752491</td>
+        </tr>
+      </table>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script>
+      var map = L.map("map").setView(
+        [35.250608772930796, -91.7346791029325],
+        17
+      );
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
+      }).addTo(map);
+
+      L.marker([35.25048611116927, -91.73463618752491])
+        .addTo(map)
+        .bindPopup("Restorative Wellness & Aesthetics")
+        .openPopup();
+    </script>
+  </body>
+  <footer>
+    <p>
+      Contact Email:
+      <a href="mailto:lynne.jacey@gmail.com">lynne.jacey@gmail.com</a>
+    </p>
+    <p>Contact Number:<a href="tel: 870-256-5090">870-256-5090</a></p>
+    <p>Business Address: 903 E Race Ave Searcy, AR 72143</p>
+    <p>Business Hours: Mon-Wed: 9 AM - 5 PM</p>
+  </footer>
+</html>
